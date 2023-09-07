@@ -56,6 +56,7 @@ Default: 9px
   padding: 0;
   margin: 0;
   box-sizing: border-box;
+  font-family: "Roboto", sans-serif;
 }
 
 html {
@@ -72,6 +73,11 @@ html {
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
+}
+
+ion-icon {
+  margin-top: 0.26rem;
+  color: black;
 }
 
 /* general css styles */
@@ -92,7 +98,7 @@ html {
 .grid--5-rows {
   display: grid;
   /* grid-template-rows: 0.25fr 1fr 2fr 1fr 5rem; */
-  grid-template-rows: auto auto 2fr 1fr 5rem;
+  grid-template-rows: auto auto 2fr 0.5fr 5rem;
   grid-row-gap: 2rem;
 }
 
@@ -138,6 +144,14 @@ a {
 
 a:not(:last-child) {
   padding-right: 0.5rem;
+}
+
+.links-right {
+  display: flex;
+}
+
+.nav_link:not(:last-child) {
+  padding-right: 1.2rem;
 }
 
 .about-me-section {
@@ -218,7 +232,46 @@ main section img {
 }
 
 .right-links {
-  font-size: 1.8rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 2.4rem;
+}
+
+ion-icon,
+.devicon-github-original {
+  border-radius: 10px;
+}
+
+ion-icon:hover,
+.devicon-github-original:hover {
+  box-shadow: 0rem 0rem 15px #ffffff80;
+}
+
+/* .project-link {
+  transition: all 0.3s ease-in;
+} */
+
+.project-link:after,
+.nav_link:after {
+  content: "";
+  display: block;
+  margin: auto;
+  margin-top: 0.25rem;
+  height: 3px;
+  width: 0px;
+  background: transparent;
+  transition: width 0.5s ease, background-color 0.5s ease;
+}
+
+.project-link:hover:after,
+.nav_link:hover:after {
+  width: 100%;
+  background: rgb(255, 255, 255);
+}
+
+.project-link:hover {
+  font-size: 1.6rem;
 }
 
 .contact {
@@ -226,6 +279,36 @@ main section img {
   max-width: 80vw;
   width: 100%;
   padding: 0rem 1.6rem;
+}
+
+.contact > h1 {
+  font-size: 2.4rem;
+}
+
+.contact-link {
+  display: flex;
+  align-items: center;
+  padding-bottom: 1.2rem;
+  font-size: 1.4rem;
+}
+
+.contact-icon {
+  font-size: 1.8rem;
+  padding-right: 0.8rem;
+}
+
+.img {
+  height: 2.4rem;
+  width: 2.4rem;
+}
+
+.contact-link > p:not(:first-child) {
+  padding-top: 0.1rem;
+  border-bottom: 1px solid white;
+}
+
+.contact-links-container {
+  padding-top: 1.2rem;
 }
 
 .footer {

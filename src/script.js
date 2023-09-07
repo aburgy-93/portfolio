@@ -1,4 +1,4 @@
-const projectSection = document.querySelector(".project");
+const projectSection = document.querySelector(".about-me-section");
 const nav = document.querySelector(".navBar");
 
 const stickyNav = function (entries, observer) {
@@ -8,13 +8,13 @@ const stickyNav = function (entries, observer) {
   const { isIntersecting } = entry;
   console.log(isIntersecting);
 
-  if (!isIntersecting) nav.classList.remove("sticky");
+  if (isIntersecting) nav.classList.remove("sticky");
   else nav.classList.add("sticky");
 };
 
 const projectsObserver = new IntersectionObserver(stickyNav, {
   root: null,
-  threshold: 0,
+  threshold: 0.25,
   rootMargin: "-150px",
 });
 
